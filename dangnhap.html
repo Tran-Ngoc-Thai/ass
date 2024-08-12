@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Liên kết đến tập tin CSS để định dạng -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<style>
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.login-form .logo img {
+    width: 180px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-login button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.google-btn {
+    background-color: #4285F4;
+    color: white;
+}
+
+.zalo-btn {
+    background-color: #007AFF;
+    color: white;
+}
+
+.or-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.or-separator span {
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    line-height: 0;
+    margin: 0 10px;
+}
+
+.or-separator span:before {
+    background: white;
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+    padding-right: 40px;
+}
+
+.forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 90%;
+    padding: 10px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-link {
+    margin-top: 20px;
+}
+
+.register-link span {
+    color: #333;
+}
+
+.register-link a {
+    color: #d32f2f;
+    text-decoration: none;
+}
+
+.policy-link {
+    margin-top: 10px;
+}
+
+.policy-link a {
+    color: #d32f2f;
+    text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  /* Điều chỉnh article cho thiết bị di động */
+  article {
+    padding: 10px;
+  }
+
+  .login-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-form .logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .login-form h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .login-form .social-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .login-form .social-login button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .login-form .or-separator {
+    margin: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .login-form .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .login-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .login-form .forgot-password {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .login-form .forgot-password a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .login-form .login-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .login-form .register-link {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .login-form .register-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .login-form .policy-link {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .login-form .policy-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+}
+
+</style>
+<body>
+
+    <header>
+        <br>
+        <div class="logo">
+            <img src="images/Logo.png" alt="logo">
+        </div>
+        <ul class="head">
+            <li><a href="index.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Home</a></li>
+            <li><a href="gioithieu.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Giới Thiệu</a></li>
+            <li><a href="chinhsachbaohanh.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Chính Sách Bảo Hành</a></li>
+            <li><a href="dangnhap.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Đăng Nhập</a></li>
+            <li><a href="lienhe.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Liên Hệ</a></li>
+            <audio id="myAudio" src="images/audio.mp3" autoplay loop></audio>
+        </ul>
+    </header>
+    <br>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Hình ảnh full chiều rộng với số và chú thích -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/slide1.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/slide2.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/slide3.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/slide4.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <!-- Nút "Tiếp theo" và "Trước" -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- Các dấu chấm/hình tròn -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    <br>
+    <div class="marquee">
+        <span>Trần Ngọc Thái</span>
+      </div>
+    <br>
+    <div class="frame">
+        <div class="left">
+            <aside>
+                <ul>
+                    <h3>ĐIỆN THOẠI</h3>
+                    <li>iPhone</li>
+                    <li>SamSung</li>
+                    <li>Tecno</li>
+                    <li>Oppo</li>
+                </ul>
+            </aside>
+            <br>
+            <aside>
+                <ul>
+                    <h3>LAPTOP</h3>
+                    <li>Apple</li>
+                    <li>Dell</li>
+                    <li>Asus</li>
+                    <li>Huawei</li>
+                </ul>
+            </aside>
+            <br>
+            <aside>
+                <ul>
+                <h3>TABLET</h3>
+                <li>Oppo</li>
+                <li>Nokia</li>
+                <li>Yuho</li>
+                <li>Samsung</li>
+            </ul>
+            </aside>
+            <aside>
+                <ul>
+                    <h3>Đồ Điện Tử</h3>
+                    <li>Loa</li>
+                    <li>Tai Nghe</li>
+                    <li>Cáp Sạc</li>
+                    <li>Đồng Hồ</li>
+                </ul>
+            </aside>
+        </div>
+        <div class="right">
+            <article>
+                <div class="login-container">
+                    <form class="login-form" onsubmit="login(event)">
+                        <div class="logo">
+                            <img src="images/dangnhap.png" alt="Logo">
+                        </div>
+                        <h2>Đăng nhập với</h2>
+                        <div class="social-login">
+                            <button type="button" class="google-btn">Google</button>
+                            <button type="button" class="zalo-btn">Zalo</button>
+                        </div>
+                        <div class="or-separator">
+                            <span>hoặc</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="username" placeholder="Nhập số điện thoại/email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+                        </div>
+                        <div class="forgot-password">
+                            <a href="#">Quên mật khẩu?</a>
+                        </div>
+                        <button type="submit" class="login-btn">Đăng nhập</button>
+                        <div class="register-link">
+                            <span>Bạn chưa có tài khoản? <a href="#">Đăng ký ngay</a></span>
+                        </div>
+                        <div class="policy-link">
+                            <a href="#">Xem chính sách ưu đãi</a>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </div>
+    </div>
+    <br>
+    <div class="sellers">
+        <h2>BEST SELLERS</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/anh12.webp" alt="iPhone 11">
+                <div>iPhone 11</div>
+                <div>WHITE</div>
+                <div>$299.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh13.webp" alt="Samsung Galaxy A54">
+                <div>Samsung Galaxy A54</div>
+                <div>BLACK</div>
+                <div>$199.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh14.webp" alt="MacBook Air M2 15">
+                <div>MacBook Air M2 15"</div>
+                <div>WHITE</div>
+                <div>$639.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh15.webp" alt="Asus Vivobook">
+                <div>Asus Vivobook</div>
+                <div>GREY</div>
+                <div>$529.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh17.webp" alt="Tai Nghe Wireless Havit">
+                <div>Tai Nghe Wireless Havit</div>
+                <div>BLACK</div>
+                <div>$49.99</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <footer>
+        <div class="footer">
+            <!-- Phần hỗ trợ và dịch vụ -->
+            <div class="support-services">
+                <h4>Hỗ Trợ - Dịch Vụ</h4>
+                <ul>
+                    <li>Chính sách và hướng dẫn mua hàng trả góp</li>
+                    <li>Hướng dẫn mua hàng và chính sách vận chuyển</li>
+                    <li>Tra cứu đơn hàng</li>
+                    <li>Chính sách đổi mới và bảo hành</li>
+                    <li>Dịch vụ bảo hành mở rộng</li>
+                    <li>Chính sách bảo mật</li>
+                    <li>Chính sách giải quyết khiếu nại</li>
+                    <li>Quy chế hoạt động</li>
+                </ul>
+            </div>
+            <!-- Phần thông tin liên hệ -->
+            <div class="contact-info">
+                <h4>Thông Tin Liên Hệ</h4>
+                <ul>
+                    <li>Thông tin các trang</li>
+                    <li>Dịch vụ mua sắm</li>
+                    <li>Tra cứu bảo hành</li>
+                </ul>
+                <span>0356127703</span>
+            </div>
+
+            <!-- Phần các phương thức thanh toán -->
+            <div class="payment-methods">
+                <h4>Thanh toán miễn phí</h4>
+                <img src="https://via.placeholder.com/50x30?text=Visa" alt="Visa">
+                <img src="https://via.placeholder.com/50x30?text=MasterCard" alt="MasterCard">
+                <img src="https://via.placeholder.com/50x30?text=JCB" alt="JCB">
+                <img src="https://via.placeholder.com/50x30?text=SamsungPay" alt="SamsungPay">
+                <img src="https://via.placeholder.com/50x30?text=ATM" alt="ATM">
+                <img src="https://via.placeholder.com/50x30?text=VNPAY" alt="VNPAY">
+                <img src="https://via.placeholder.com/50x30?text=ZaloPay" alt="ZaloPay">
+            </div>
+            <!-- Phần thông tin về công ty -->
+            <div class="company-info">
+                <p>Địa chỉ: 116 Nguyễn Huy Tưởng, Quận Liên Chiểu, Thành Phố Đà Nẵng, Việt Nam. Điện thoại: 0356127703.</p>
+                <h3 style="color: orange;">Chịu trách nhiệm nội dung: Trần Ngọc Thái</h3>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/index.js"></script>
+</body>
+
+</html>

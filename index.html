@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Liên kết đến tập tin CSS để định dạng -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <br>
+        <!-- Khu vực chứa logo -->
+        <div class="logo">
+            <img src="images/Logo.png" alt="logo">
+        </div>
+        <!-- Danh sách điều hướng (navigation bar) -->
+        <ul class="head">
+            <!-- Các mục trong thanh điều hướng -->
+            <li><a href="index.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Home</a></li>
+            <li><a href="gioithieu.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Giới
+                    Thiệu</a></li>
+            <li><a href="chinhsachbaohanh.html" onmouseover="thayDoiMauNen(this)"
+                    onmouseout="khoiPhucMauNen(this)">Chính Sách Bảo Hành</a></li>
+            <li><a href="dangnhap.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Đăng
+                    Nhập</a></li>
+            <li><a href="lienhe.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Liên Hệ</a>
+            </li>
+            <audio id="myAudio" src="images/audio.mp3" autoplay loop></audio>
+        </ul>
+    </header>
+    <br>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Hình ảnh full chiều rộng với số và chú thích -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/slide1.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/slide2.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/slide3.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/slide4.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <!-- Nút "Tiếp theo" và "Trước" để chuyển đổi giữa các slide -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- Các dấu chấm/hình tròn để chỉ slide hiện tại -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    <!-- Liên kết đến tập tin JavaScript để điều khiển slideshow -->
+    <br>
+    <div class="marquee">
+        <span>Trần Ngọc Thái</span>
+    </div>
+    <br>
+    <div class="frame">
+        <div class="left">
+            <!-- Phần bên trái, chứa các danh mục sản phẩm -->
+            <aside>
+                <ul>
+                    <h3>ĐIỆN THOẠI</h3>
+                    <li>iPhone</li>
+                    <li>SamSung</li>
+                    <li>Tecno</li>
+                    <li>Oppo</li>
+                </ul>
+            </aside>
+            <br>
+            <aside>
+                <ul>
+                    <h3>LAPTOP</h3>
+                    <li>Apple</li>
+                    <li>Dell</li>
+                    <li>Asus</li>
+                    <li>Huawei</li>
+                </ul>
+            </aside>
+            <br>
+            <aside>
+                <ul>
+                    <h3>TABLET</h3>
+                    <li>Oppo</li>
+                    <li>Nokia</li>
+                    <li>Yuho</li>
+                    <li>Samsung</li>
+                </ul>
+            </aside>
+            <aside>
+                <ul>
+                    <h3>Đồ Điện Tử</h3>
+                    <li>Loa</li>
+                    <li>Tai Nghe</li>
+                    <li>Cáp Sạc</li>
+                    <li>Đồng Hồ</li>
+                </ul>
+            </aside>
+        </div>
+        <div class="right">
+            <!-- Phần bên phải, chứa danh sách các sản phẩm -->
+            <div class="product-grid">
+                <!-- Mỗi sản phẩm trong danh sách -->
+                <div class="product">
+                    <img src="images/anh1.png" alt="Apple TV 32GB">
+                    <div>Apple TV 32GB</div>
+                    <div>BLACK</div>
+                    <div>$49.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh2.png" alt="Pebble">
+                    <div>Pebble</div>
+                    <div>RED</div>
+                    <div>$29.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh3.png" alt="Zendure 4-Port USB">
+                    <div>Zendure 4-Port USB</div>
+                    <div>WHITE</div>
+                    <div>$49.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh4.png" alt="Withings Smart Body Analyzer ws-50">
+                    <div>Withings Smart Body Analyzer ws-50</div>
+                    <div>BLACK</div>
+                    <div>$29.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh5.jpg" alt="Homepod Mini">
+                    <div>Homepod Mini</div>
+                    <div>BLACK and WHITE</div>
+                    <div>$39.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh16.jpg" alt="Điện thoại iPhone 12">
+                    <div>Điện thoại iPhone 12</div>
+                    <div>WHITE</div>
+                    <div>$399.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh6.png" alt="Apple TV 32GB">
+                    <div>Apple TV 32GB</div>
+                    <div>BLACK</div>
+                    <div>$49.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh7.png" alt="Pebble">
+                    <div>Pebble</div>
+                    <div>RED</div>
+                    <div>$29.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh8.png" alt="Zendure 4-Port USB">
+                    <div>Zendure 4-Port USB</div>
+                    <div>WHITE</div>
+                    <div>$49.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh9.png" alt="Apple TV 32GB">
+                    <div>Apple TV 32GB</div>
+                    <div>BLACK</div>
+                    <div>$49.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh10.png" alt="Pebble">
+                    <div>Pebble</div>
+                    <div>RED</div>
+                    <div>$29.99</div>
+                </div>
+                <div class="product">
+                    <img src="images/anh11.png" alt="Zendure 4-Port USB">
+                    <div>Zendure 4-Port USB</div>
+                    <div>WHITE</div>
+                    <div>$49.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Điều hướng giữa các trang -->
+    <div class="chuyentrang1">
+        <ul class="chuyentrang">
+            <li><a href="index.html"><b>1</b></a></li>
+            <li><a href="index1.html">2</a></li>
+            <li><a href="index2.html">3</a></li>
+        </ul>
+    </div>
+    <br>
+
+    <!-- Phần hiển thị các sản phẩm bán chạy nhất -->
+    <div class="sellers">
+        <h2>BEST SELLERS</h2>
+        <div class="product-grid">
+            <!-- Mỗi sản phẩm trong danh sách các sản phẩm bán chạy -->
+            <div class="product">
+                <img src="images/anh12.webp" alt="iPhone 11">
+                <div>iPhone 11</div>
+                <div>WHITE</div>
+                <div>$299.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh13.webp" alt="Samsung Galaxy A54">
+                <div>Samsung Galaxy A54</div>
+                <div>BLACK</div>
+                <div>$199.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh14.webp" alt="MacBook Air M2 15">
+                <div>MacBook Air M2 15"</div>
+                <div>WHITE</div>
+                <div>$639.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh15.webp" alt="Asus Vivobook">
+                <div>Asus Vivobook</div>
+                <div>GREY</div>
+                <div>$529.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh17.webp" alt="Tai Nghe Wireless Havit">
+                <div>Tai Nghe Wireless Havit</div>
+                <div>BLACK</div>
+                <div>$49.99</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <footer>
+            <div class="footer">
+            <!-- Phần hỗ trợ và dịch vụ -->
+            <div class="support-services">
+                <h4>Hỗ Trợ - Dịch Vụ</h4>
+                <ul>
+                    <li>Chính sách và hướng dẫn mua hàng trả góp</li>
+                    <li>Hướng dẫn mua hàng và chính sách vận chuyển</li>
+                    <li>Tra cứu đơn hàng</li>
+                    <li>Chính sách đổi mới và bảo hành</li>
+                    <li>Dịch vụ bảo hành mở rộng</li>
+                    <li>Chính sách bảo mật</li>
+                    <li>Chính sách giải quyết khiếu nại</li>
+                    <li>Quy chế hoạt động</li>
+                </ul>
+            </div>
+            <!-- Phần thông tin liên hệ -->
+            <div class="contact-info">
+                <h4>Thông Tin Liên Hệ</h4>
+                <ul>
+                    <li>Thông tin các trang</li>
+                    <li>Dịch vụ mua sắm</li>
+                    <li>Tra cứu bảo hành</li>
+                </ul>
+                <span>0356127703</span>
+            </div>
+
+            <!-- Phần các phương thức thanh toán -->
+            <div class="payment-methods">
+                <h4>Thanh toán miễn phí</h4>
+                <img src="https://via.placeholder.com/50x30?text=Visa" alt="Visa">
+                <img src="https://via.placeholder.com/50x30?text=MasterCard" alt="MasterCard">
+                <img src="https://via.placeholder.com/50x30?text=JCB" alt="JCB">
+                <img src="https://via.placeholder.com/50x30?text=SamsungPay" alt="SamsungPay">
+                <img src="https://via.placeholder.com/50x30?text=ATM" alt="ATM">
+                <img src="https://via.placeholder.com/50x30?text=VNPAY" alt="VNPAY">
+                <img src="https://via.placeholder.com/50x30?text=ZaloPay" alt="ZaloPay">
+            </div>
+            <!-- Phần thông tin về công ty -->
+            <div class="company-info">
+                <p>Địa chỉ: 116 Nguyễn Huy Tưởng, Quận Liên Chiểu, Thành Phố Đà Nẵng, Việt Nam. Điện thoại: 0356127703.</p>
+                <h3 style="color: orange;">Chịu trách nhiệm nội dung: Trần Ngọc Thái</h3>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,706 @@
+body {
+  width: 1400px;
+  /* Chiều rộng của trang */
+  height: auto;
+  /* Chiều cao tự động */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* Font chữ của trang */
+  margin: 0 auto;
+  /* Canh giữa trang */
+  background-color: #e4e5e7;
+  /* Màu nền của trang */
+}
+
+/* header */
+header {
+  background-color: rgb(255, 255, 255);
+  /* Màu nền trắng */
+  height: 89px;
+  /* Chiều cao header */
+  display: flex;
+  align-items: center;
+  /* Căn giữa các phần tử theo chiều dọc */
+}
+
+.logo img {
+  height: 26px;
+  /* Chiều cao logo */
+  width: 104px;
+  /* Chiều rộng logo */
+  margin-left: 30px;
+  /* Khoảng cách bên trái logo */
+}
+
+.head {
+  list-style-type: none;
+  /* Loại bỏ ký hiệu đầu dòng của danh sách */
+  margin: 0;
+  /* Loại bỏ khoảng cách bên ngoài */
+  padding: 0;
+  /* Loại bỏ khoảng cách bên trong */
+  display: flex;
+  align-items: center;
+  /* Căn giữa các mục menu theo chiều dọc */
+}
+
+.head li {
+  margin-right: 20px;
+  /* Khoảng cách giữa các mục menu */
+}
+
+.head li a {
+  color: #000000;
+  /* Màu chữ đen */
+  text-decoration: none;
+  /* Loại bỏ gạch chân */
+  padding: 5px 10px;
+  /* Đệm cho các mục menu */
+}
+
+/* Hiệu ứng hover */
+.head li a:hover {
+  background-color: #fff;
+  /* Màu nền khi di chuột qua */
+  color: rgb(93, 93, 94);
+  /* Màu chữ khi di chuột qua */
+}
+
+/* Mở rộng chiều rộng menu khi hiển thị trên màn hình rộng */
+@media screen and (min-width: 768px) {
+  .head {
+    margin-left: auto;
+    /* Dịch menu sang phải */
+  }
+}
+
+/* endheader */
+
+/* slide */
+
+/* CSS cho slideshow */
+.slideshow-container {
+  position: relative;
+  /* Định vị tương đối */
+  max-width: 100%;
+  /* Chiều rộng tối đa 100% */
+  margin: auto;
+  /* Canh giữa slideshow */
+}
+
+.mySlides {
+  display: none;
+  /* Ẩn các slide */
+}
+
+.fade {
+  animation: fade 2s linear infinite;
+  /* Hiệu ứng mờ dần */
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+    /* Độ mờ ở mức 0 */
+  }
+
+  20%,
+  80% {
+    opacity: 1;
+    /* Độ mờ ở mức 100% */
+  }
+}
+
+.numbertext {
+  color: #f2f2f2;
+  /* Màu chữ trắng nhạt */
+  font-size: 12px;
+  /* Kích thước chữ */
+  padding: 8px 12px;
+  /* Khoảng cách bên trong */
+  position: absolute;
+  /* Định vị tuyệt đối */
+  top: 0;
+  /* Canh trên */
+}
+
+.text {
+  color: #f2f2f2;
+  /* Màu chữ trắng nhạt */
+  font-size: 15px;
+  /* Kích thước chữ */
+  padding: 8px 12px;
+  /* Khoảng cách bên trong */
+  position: absolute;
+  /* Định vị tuyệt đối */
+  bottom: 0;
+  /* Canh dưới */
+  width: 100%;
+  /* Chiều rộng 100% */
+  text-align: center;
+  /* Canh giữa chữ */
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  /* Con trỏ dạng tay khi hover */
+  position: absolute;
+  /* Định vị tuyệt đối */
+  top: 50%;
+  /* Canh giữa theo chiều dọc */
+  width: auto;
+  /* Chiều rộng tự động */
+  padding: 16px;
+  /* Khoảng cách bên trong */
+  margin-top: -22px;
+  /* Khoảng cách trên */
+  color: white;
+  /* Màu chữ trắng */
+  font-weight: bold;
+  /* Chữ đậm */
+  font-size: 18px;
+  /* Kích thước chữ */
+  transition: 0.6s ease;
+  /* Hiệu ứng chuyển màu mượt mà */
+  border-radius: 0 3px 3px 0;
+  /* Bo góc */
+  user-select: none;
+  /* Không cho phép chọn */
+}
+
+.next {
+  right: 0;
+  /* Canh phải */
+  border-radius: 3px 0 0 3px;
+  /* Bo góc */
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Màu nền khi hover */
+}
+
+/* CSS cho dots/circles */
+.dot {
+  height: 15px;
+  /* Chiều cao dot */
+  width: 15px;
+  /* Chiều rộng dot */
+  margin: 0 2px;
+  /* Khoảng cách giữa các dot */
+  background-color: #bbb;
+  /* Màu nền dot */
+  border-radius: 50%;
+  /* Bo góc hình tròn */
+  display: inline-block;
+  /* Hiển thị theo hàng ngang */
+  transition: background-color 0.6s ease;
+  /* Hiệu ứng chuyển màu nền mượt mà */
+}
+
+.active {
+  background-color: #717171;
+  /* Màu nền dot khi active */
+}
+
+/* endslide */
+
+/* conten */
+
+.frame {
+  display: flex;
+  /* Sử dụng Flexbox để căn chỉnh các phần tử */
+  overflow: hidden;
+  /* Ẩn nội dung tràn ra khỏi khung */
+}
+
+.left {
+  width: 20%;
+  /* Phần aside sẽ chiếm 20% chiều rộng của khung */
+  padding: 20px;
+  /* Khoảng cách từ nội dung đến khung */
+  background-color: #e4e5e7;
+  /* Màu nền của phần aside */
+}
+
+.right {
+  width: 80%;
+  /* Phần article sẽ chiếm 80% chiều rộng của khung */
+  padding: 20px;
+  /* Khoảng cách từ nội dung đến khung */
+  background-color: #e4e5e7;
+  /* Màu nền của phần article */
+  text-align: center;
+  /* Canh giữa nội dung */
+}
+
+.right table th {
+  background-color: white;
+  /* Màu nền của tiêu đề bảng */
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  /* Sắp xếp các phần tử theo cột */
+}
+
+aside {
+  background-color: #f9f9f9;
+  /* Màu nền của phần aside */
+  padding: 15px;
+  /* Khoảng cách từ nội dung đến khung */
+  border: 1px solid #ddd;
+  /* Đường viền màu xám nhạt */
+  border-radius: 4px;
+  /* Bo góc 4px */
+  margin-bottom: 20px;
+  /* Khoảng cách dưới cùng là 20px */
+}
+
+ul {
+  list-style-type: none;
+  /* Loại bỏ ký hiệu đầu dòng của danh sách */
+  padding: 0;
+  /* Loại bỏ khoảng cách bên trong */
+  margin: 0;
+  /* Loại bỏ khoảng cách bên ngoài */
+}
+
+h3 {
+  font-size: 18px;
+  /* Kích thước chữ 18px */
+  margin-bottom: 10px;
+  /* Khoảng cách dưới cùng là 10px */
+  color: #333;
+  /* Màu chữ xám đậm */
+  border-bottom: 1px solid #ddd;
+  /* Đường viền dưới màu xám nhạt */
+  padding-bottom: 5px;
+  /* Khoảng cách dưới chữ là 5px */
+}
+
+li {
+  padding: 8px 0;
+  /* Khoảng cách trên và dưới là 8px */
+  font-size: 16px;
+  /* Kích thước chữ 16px */
+  color: #555;
+  /* Màu chữ xám trung bình */
+  cursor: pointer;
+  /* Thay đổi con trỏ thành hình tay khi hover */
+}
+
+li:hover {
+  background-color: #e0e0e0;
+  /* Màu nền khi hover */
+  border-radius: 4px;
+  /* Bo góc 4px khi hover */
+}
+
+/* content */
+/* Grid sản phẩm */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Đặt các cột grid để tự động lấp đầy với kích thước tối thiểu là 300px và tối đa là 1fr */
+  gap: 20px; /* Khoảng cách giữa các ô trong grid */
+}
+
+/* Thiết kế sản phẩm */
+.product {
+  background-color: #fff; /* Màu nền trắng */
+  border-radius: 10px; /* Bo góc 10px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng với độ mờ */
+  padding: 15px; /* Khoảng cách bên trong phần tử */
+  text-align: center; /* Canh giữa nội dung */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà khi hover */
+}
+
+/* Hiệu ứng khi hover trên sản phẩm */
+.product:hover {
+  transform: translateY(-10px); /* Di chuyển lên trên 10px */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tăng đổ bóng khi hover */
+}
+
+/* Hình ảnh sản phẩm */
+.product img {
+  max-width: 100%; /* Độ rộng tối đa 100% */
+  height: auto; /* Chiều cao tự động theo tỷ lệ */
+  transition: transform 0.3s ease; /* Hiệu ứng phóng to mượt mà khi hover */
+}
+
+/* Hiệu ứng khi hover trên hình ảnh sản phẩm */
+.product img:hover {
+  transform: scale(1.1); /* Phóng to 10% khi hover */ 
+}
+
+/* Khoảng cách giữa các phần trong sản phẩm */
+.product div {
+  margin: 10px 0; /* Khoảng cách trên và dưới là 10px */
+}
+
+/* Phần cuối cùng của sản phẩm */
+.product div:last-child {
+  font-size: 1.2em; /* Kích thước chữ lớn hơn */
+  font-weight: bold; /* Chữ đậm */
+  color: #007bff; /* Màu xanh lam */
+  cursor: pointer; /* Thay đổi con trỏ thành hình tay khi hover */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà khi hover */
+}
+
+/* Hiệu ứng khi hover trên phần cuối cùng của sản phẩm */
+.product div:last-child:hover {
+  color: #0056b3; /* Đổi màu xanh đậm hơn khi hover */
+}
+
+/* endcontent */
+.chuyentrang1 {
+  text-align: center;
+  /* Canh giữa nội dung */
+  margin: 20px 0;
+  /* Khoảng cách trên và dưới là 20px */
+}
+
+.chuyentrang {
+  list-style-type: none;
+  /* Loại bỏ ký hiệu đầu dòng của danh sách */
+  padding: 0;
+  /* Loại bỏ khoảng cách bên trong */
+  display: inline-block;
+  /* Hiển thị theo hàng ngang */
+  margin: 0;
+  /* Loại bỏ khoảng cách bên ngoài */
+}
+
+.chuyentrang li {
+  display: inline;
+  /* Hiển thị các mục danh sách theo hàng ngang */
+  margin: 0 5px;
+  /* Khoảng cách trái và phải là 5px */
+}
+
+.chuyentrang li a {
+  text-decoration: none;
+  /* Loại bỏ gạch chân */
+  font-size: 16px;
+  /* Kích thước chữ */
+  color: #333;
+  /* Màu chữ xám đậm */
+  padding: 8px 12px;
+  /* Khoảng cách bên trong */
+  border: 1px solid #ddd;
+  /* Đường viền màu xám nhạt */
+  border-radius: 4px;
+  /* Bo góc 4px */
+  transition: background-color 0.3s, color 0.3s;
+  /* Hiệu ứng chuyển màu nền và màu chữ mượt mà */
+}
+
+.chuyentrang li a:hover {
+  background-color: #beb9b9;
+  /* Màu nền khi di chuột qua */
+  color: #fff;
+  /* Màu chữ trắng khi di chuột qua */
+  border-color: #007bff;
+  /* Màu viền khi di chuột qua */
+}
+/* sell */
+h2 {
+  text-align: center;
+  /* Canh giữa nội dung */
+  margin-bottom: 20px;
+  /* Khoảng cách dưới là 20px */
+}
+
+.sellers .product-grid {
+  display: flex;
+  /* Sử dụng Flexbox để căn chỉnh các phần tử */
+  flex-wrap: wrap;
+  /* Cho phép các mục tự động xuống dòng */
+  justify-content: center;
+  /* Canh giữa nội dung theo chiều ngang */
+  gap: 20px;
+  /* Khoảng cách giữa các mục */
+}
+
+.sellers .product {
+  background-color: #fff;
+  /* Màu nền trắng */
+  border-radius: 10px;
+  /* Bo góc 10px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Đổ bóng với độ mờ */
+  padding: 15px;
+  /* Khoảng cách bên trong phần tử */
+  text-align: center;
+  /* Canh giữa nội dung */
+  width: 200px;
+  /* Chiều rộng của sản phẩm */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Hiệu ứng chuyển đổi mượt mà khi hover */
+}
+
+.sellers .product:hover {
+  transform: translateY(-10px);
+  /* Di chuyển lên trên 10px */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Tăng đổ bóng khi hover */
+}
+
+.sellers .product img {
+  max-width: 100%;
+  /* Độ rộng tối đa 100% */
+  height: auto;
+  /* Chiều cao tự động theo tỷ lệ */
+  transition: transform 0.3s ease;
+  /* Hiệu ứng phóng to mượt mà khi hover */
+}
+
+.sellers .product img:hover {
+  transform: scale(1.1);
+  /* Phóng to 10% khi hover */
+}
+
+.sellers .product div {
+  margin: 10px 0;
+  /* Khoảng cách trên và dưới là 10px */
+}
+
+.sellers .product div:last-child {
+  font-size: 1.2em;
+  /* Kích thước chữ lớn hơn */
+  font-weight: bold;
+  /* Chữ đậm */
+  color: #007bff;
+  /* Màu xanh lam */
+  cursor: pointer;
+  /* Thay đổi con trỏ thành hình tay khi hover */
+  transition: color 0.3s ease;
+  /* Hiệu ứng chuyển màu mượt mà khi hover */
+}
+
+.sellers .product div:last-child:hover {
+  color: #0056b3;
+  /* Đổi màu xanh đậm hơn khi hover */
+}
+/* footer */
+.footer {
+  background-color: #0f1849;
+  /* Màu nền của footer */
+  color: rgb(255, 255, 255);
+  /* Màu chữ trắng */
+  padding: 20px;
+  /* Khoảng cách bên trong footer */
+  display: flex;
+  /* Sử dụng Flexbox để căn chỉnh các phần tử */
+  justify-content: space-around;
+  /* Căn đều các phần tử với khoảng cách bằng nhau */
+  flex-wrap: wrap;
+  /* Cho phép các phần tử xuống dòng khi không đủ không gian */
+  border-radius: 10px;
+  /* Bo góc 10px */
+}
+
+.footer div {
+  flex: 1;
+  /* Các phần tử sẽ chiếm 1 phần không gian bằng nhau */
+  margin: 10px;
+  /* Khoảng cách bên ngoài các phần tử là 10px */
+  min-width: 200px;
+  /* Chiều rộng tối thiểu là 200px */
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+  /* Khoảng cách dưới của tiêu đề là 10px */
+}
+
+.footer ul {
+  list-style-type: none;
+  /* Loại bỏ ký hiệu đầu dòng của danh sách */
+  padding: 0;
+  /* Loại bỏ khoảng cách bên trong */
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+  /* Khoảng cách dưới của mục danh sách là 8px */
+  color: white;
+  /* Màu chữ trắng */
+}
+
+.footer .contact-info, .footer .payment-methods, .footer .delivery-methods {
+  text-align: center;
+  /* Canh giữa nội dung */
+}
+
+.footer .payment-methods img, .footer .delivery-methods img {
+  max-width: 50px;
+  /* Chiều rộng tối đa của hình ảnh là 50px */
+  margin: 5px;
+  /* Khoảng cách bên ngoài hình ảnh là 5px */
+}
+
+.footer .contact-info span {
+  display: block;
+  /* Hiển thị như một khối */
+  margin-top: 10px;
+  /* Khoảng cách trên là 10px */
+  font-size: 18px;
+  /* Kích thước chữ */
+  font-weight: bold;
+  /* Chữ đậm */
+}
+
+.footer .company-info {
+  font-size: 12px;
+  /* Kích thước chữ */
+  text-align: center;
+  /* Canh giữa nội dung */
+}
+
+/* Mobile Styles for max-width 768px */
+@media screen and (max-width: 768px) {
+  /* Đảm bảo trang web có chiều rộng tối đa là 100% trên thiết bị di động */
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e4e5e7;
+    /* Màu nền */
+  }
+
+  /* Điều chỉnh header cho thiết bị di động */
+  header {
+    flex-direction: column;
+    /* Chuyển đổi thành cột */
+    height: auto;
+    /* Chiều cao tự động */
+    padding: 10px;
+    /* Khoảng cách bên trong header */
+  }
+
+  .logo img {
+    margin: 0 auto;
+    /* Canh giữa logo */
+  }
+
+  .head {
+    flex-direction: column;
+    /* Chuyển đổi thành cột */
+    align-items: center;
+    /* Canh giữa các mục menu */
+  }
+
+  .head li {
+    margin: 10px 0;
+    /* Khoảng cách trên và dưới là 10px */
+  }
+
+  /* Điều chỉnh slideshow container cho thiết bị di động */
+  .slideshow-container {
+    max-width: 100%;
+    /* Chiều rộng tối đa là 100% */
+  }
+
+  .mySlides img {
+    width: 100%;
+    /* Chiều rộng 100% */
+    height: auto;
+    /* Chiều cao tự động theo tỷ lệ */
+  }
+
+  /* Điều chỉnh frame để hiển thị khối trên thiết bị di động */
+  .frame {
+    flex-direction: column;
+    /* Chuyển đổi thành cột */
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    /* Chiều rộng 100% */
+    padding: 10px;
+    /* Khoảng cách bên trong */
+  }
+
+  /* Điều chỉnh sản phẩm để hiển thị theo cột trên thiết bị di động */
+  .product-grid {
+    grid-template-columns: 1fr;
+    /* Một cột */
+  }
+
+  /* Điều chỉnh bảng điều hướng trang */
+  .chuyentrang1 {
+    padding: 0 10px;
+    /* Khoảng cách trái và phải là 10px */
+  }
+
+  .chuyentrang {
+    display: flex;
+    /* Sử dụng Flexbox để căn chỉnh các phần tử */
+    justify-content: center;
+    /* Canh giữa nội dung */
+    flex-wrap: wrap;
+    /* Cho phép các mục tự động xuống dòng */
+  }
+
+  .chuyentrang li {
+    margin: 5px;
+    /* Khoảng cách trên và dưới là 5px */
+  }
+
+  /* Điều chỉnh best sellers cho thiết bị di động */
+  .sellers .product-grid {
+    flex-direction: column;
+    /* Chuyển đổi thành cột */
+    align-items: center;
+    /* Canh giữa nội dung */
+  }
+
+  /* Điều chỉnh footer cho thiết bị di động */
+  .footer {
+    flex-direction: column;
+    /* Chuyển đổi thành cột */
+    text-align: center;
+    /* Canh giữa nội dung */
+  }
+
+  .footer div {
+    margin: 10px 0;
+    /* Khoảng cách trên và dưới là 10px */
+  }
+}
+
+/* làm jquery */
+/* CSS cho hiệu ứng marquee */
+.marquee {
+  width: 100%;
+  /* Chiều rộng 100% */
+  overflow: hidden;
+  /* Ẩn nội dung tràn ra */
+  white-space: nowrap;
+  /* Không ngắt dòng */
+}
+
+.marquee span {
+  display: inline-block;
+  /* Hiển thị nội dung inline-block */
+  padding-left: 100%;
+  /* Khoảng cách trái 100% */
+  animation: marquee 15s linear infinite;
+  /* Hiệu ứng chuyển động marquee */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+    /* Bắt đầu từ vị trí 0% */
+  }
+  100% {
+    transform: translateX(-100%);
+    /* Kết thúc ở vị trí -100% */
+  }
+}

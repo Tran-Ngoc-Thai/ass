@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Liên kết đến tập tin CSS để định dạng -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<style>
+.search-section {
+    background-color: #e0dcdc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.search-bar {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #00aaff;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+
+.search-bar button img {
+    width: 20px;
+    height: 20px;
+}
+
+.warranty-system {
+    margin-top: 40px;
+}
+
+.warranty-system h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.warranty-system h3 {
+    color: #00aaff;
+    margin-bottom: 10px;
+}
+
+.phone-brands {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+}
+
+.phone-brands ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.phone-brands ul li {
+    flex: 1 1 20%; /* Adjust to make 5 items per row */
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.phone-brands ul li:nth-child(5n) {
+    border-right: none;
+}
+
+.phone-brands ul li:nth-child(n+6) {
+    border-bottom: none;
+}
+@media screen and (max-width: 768px) {
+  /* Điều chỉnh article cho thiết bị di động */
+  article {
+    padding: 10px;
+  }
+
+  .search-section {
+    text-align: center;
+  }
+
+  .search-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .search-section img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .search-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .warranty-system h2, .warranty-system h3 {
+    text-align: center;
+  }
+
+  .phone-brands ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .phone-brands li {
+    margin: 5px 10px;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+</style>
+<body>
+
+    <header>
+        <br>
+        <div class="logo">
+            <img src="images/Logo.png" alt="logo">
+        </div>
+        <ul class="head">
+            <li><a href="index.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Home</a></li>
+            <li><a href="gioithieu.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Giới Thiệu</a></li>
+            <li><a href="chinhsachbaohanh.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Chính Sách Bảo Hành</a></li>
+            <li><a href="dangnhap.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Đăng Nhập</a></li>
+            <li><a href="lienhe.html" onmouseover="thayDoiMauNen(this)" onmouseout="khoiPhucMauNen(this)">Liên Hệ</a></li>
+            <audio id="myAudio" src="images/audio.mp3" autoplay loop></audio>
+        </ul>
+    </header>
+    <br>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Hình ảnh full chiều rộng với số và chú thích -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/slide1.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/slide2.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/slide3.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/slide4.jpg" style="width:100%; height:500px;">
+        </div>
+
+        <!-- Nút "Tiếp theo" và "Trước" -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- Các dấu chấm/hình tròn -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    <br>
+    <div class="marquee">
+        <span>Trần Ngọc Thái</span>
+      </div>
+    <br>
+    <div class="frame">
+        <div class="left">
+            <aside>
+                <ul>
+                    <h3>ĐIỆN THOẠI</h3>
+                    <li>iPhone</li>
+                    <li>SamSung</li>
+                    <li>Tecno</li>
+                    <li>Oppo</li>
+                </ul>
+            </aside>
+            <br>
+            <aside>
+                <ul>
+                    <h3>LAPTOP</h3>
+                    <li>Apple</li>
+                    <li>Dell</li>
+                    <li>Asus</li>
+                    <li>Huawei</li>
+                </ul>
+            </aside>
+            <br>
+            <aside>
+                <ul>
+                <h3>TABLET</h3>
+                <li>Oppo</li>
+                <li>Nokia</li>
+                <li>Yuho</li>
+                <li>Samsung</li>
+            </ul>
+            </aside>
+            <aside>
+                <ul>
+                    <h3>Đồ Điện Tử</h3>
+                    <li>Loa</li>
+                    <li>Tai Nghe</li>
+                    <li>Cáp Sạc</li>
+                    <li>Đồng Hồ</li>
+                </ul>
+            </aside>
+        </div>
+        <div class="right">
+            <article>
+                <div class="search-section">
+                    <h1 style="align-items: center;">Tra cứu bảo hành sản phẩm</h1>
+
+                    <img src="images/baohanh.png" alt="Customer Service">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Nhập IMEI sản phẩm hoặc mã phiếu bảo hành cần tra cứu">
+                        <button>Search</button>
+                    </div>
+                </div>
+        
+                <section class="warranty-system">
+                    <h2>Hệ thống bảo hành điện thoại toàn quốc</h2>
+                    <h3>Lựa chọn hãng điện thoại & nhà phân phối</h3>
+                    <div class="phone-brands">
+                        <ul>
+                            <li>Apple</li>
+                            <li>Sony</li>
+                            <li>Xiaomi</li>
+                            <li>Samsung</li>
+                            <li>Lenovo</li>
+                            <li>ZTE</li>
+                            <li>OPPO</li>
+                            <li>ASUS</li>
+                            <li>LG</li>
+                            <li>HUAWEI</li>
+                            <li>Vivo</li>
+                            <li>Wiko</li>
+                            <li>Coolpad</li>
+                            <li>Philips</li>
+                            <li>Nokia</li>
+                        </ul>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </div>
+    <br>
+    <div class="sellers">
+        <h2>BEST SELLERS</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/anh12.webp" alt="iPhone 11">
+                <div>iPhone 11</div>
+                <div>WHITE</div>
+                <div>$299.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh13.webp" alt="Samsung Galaxy A54">
+                <div>Samsung Galaxy A54</div>
+                <div>BLACK</div>
+                <div>$199.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh14.webp" alt="MacBook Air M2 15">
+                <div>MacBook Air M2 15"</div>
+                <div>WHITE</div>
+                <div>$639.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh15.webp" alt="Asus Vivobook">
+                <div>Asus Vivobook</div>
+                <div>GREY</div>
+                <div>$529.99</div>
+            </div>
+            <div class="product">
+                <img src="images/anh17.webp" alt="Tai Nghe Wireless Havit">
+                <div>Tai Nghe Wireless Havit</div>
+                <div>BLACK</div>
+                <div>$49.99</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <footer>
+        <div class="footer">
+            <!-- Phần hỗ trợ và dịch vụ -->
+            <div class="support-services">
+                <h4>Hỗ Trợ - Dịch Vụ</h4>
+                <ul>
+                    <li>Chính sách và hướng dẫn mua hàng trả góp</li>
+                    <li>Hướng dẫn mua hàng và chính sách vận chuyển</li>
+                    <li>Tra cứu đơn hàng</li>
+                    <li>Chính sách đổi mới và bảo hành</li>
+                    <li>Dịch vụ bảo hành mở rộng</li>
+                    <li>Chính sách bảo mật</li>
+                    <li>Chính sách giải quyết khiếu nại</li>
+                    <li>Quy chế hoạt động</li>
+                </ul>
+            </div>
+            <!-- Phần thông tin liên hệ -->
+            <div class="contact-info">
+                <h4>Thông Tin Liên Hệ</h4>
+                <ul>
+                    <li>Thông tin các trang</li>
+                    <li>Dịch vụ mua sắm</li>
+                    <li>Tra cứu bảo hành</li>
+                </ul>
+                <span>0356127703</span>
+            </div>
+
+            <!-- Phần các phương thức thanh toán -->
+            <div class="payment-methods">
+                <h4>Thanh toán miễn phí</h4>
+                <img src="https://via.placeholder.com/50x30?text=Visa" alt="Visa">
+                <img src="https://via.placeholder.com/50x30?text=MasterCard" alt="MasterCard">
+                <img src="https://via.placeholder.com/50x30?text=JCB" alt="JCB">
+                <img src="https://via.placeholder.com/50x30?text=SamsungPay" alt="SamsungPay">
+                <img src="https://via.placeholder.com/50x30?text=ATM" alt="ATM">
+                <img src="https://via.placeholder.com/50x30?text=VNPAY" alt="VNPAY">
+                <img src="https://via.placeholder.com/50x30?text=ZaloPay" alt="ZaloPay">
+            </div>
+            <!-- Phần thông tin về công ty -->
+            <div class="company-info">
+                <p>Địa chỉ: 116 Nguyễn Huy Tưởng, Quận Liên Chiểu, Thành Phố Đà Nẵng, Việt Nam. Điện thoại: 0356127703.</p>
+                <h3 style="color: orange;">Chịu trách nhiệm nội dung: Trần Ngọc Thái</h3>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
